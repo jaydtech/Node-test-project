@@ -6,6 +6,7 @@ const port = process.env.PORT  || 3000;
 app.use(express.json());
 
 app.get("/",(req,res)=>{
+   console.log(req.body);
    res.send("<h1>Welcome to node test app1</h1>");
 });
 
