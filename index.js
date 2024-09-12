@@ -3,12 +3,14 @@ import { MongoClient } from "mongodb";
 
 const app = express();
 const port = process.env.PORT  || 3000;
-const url = "mongodb+srv://jaydeep:XZfXn69iCdYr8Tpj@cluster0.bk2ss.mongodb.net";
+const url = "mongodb+srv://jaydeep:XZfXn69iCdYr8Tpj@cluster0.bk2ss.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+            
 const client = new MongoClient(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  tls: true, // Use TLS
-  tlsAllowInvalidCertificates: false // Ensure certificates are valid
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
 });
 
 app.use(express.json());
