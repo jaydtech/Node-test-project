@@ -31,6 +31,7 @@ app.get('/',async(req,res)=>{
   const collection = db.collection('customers');
   const result = await collection.find().toArray();
   //res.json(result);
+  console.log(result);
   res.send("<h1>Hello</hq>");
 });
 
