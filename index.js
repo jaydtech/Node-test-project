@@ -4,6 +4,7 @@ import { MongoClient , ServerApiVersion } from "mongodb";
 const app = express();
 const port = process.env.PORT  || 3000;
 const url = "mongodb+srv://jaydeep:XZfXn69iCdYr8Tpj@cluster0.bk2ss.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
             
 const client = new MongoClient(url, {
   serverApi: {
@@ -29,7 +30,8 @@ app.get('/',async(req,res)=>{
   const db = connection.db('test');
   const collection = db.collection('customers');
   const result = await collection.find().toArray();
-  res.json(result);
+  //res.json(result);
+  res.send("<h1>Hello</hq>");
 });
 
 app.listen(port,()=>{
