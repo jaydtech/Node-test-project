@@ -32,7 +32,7 @@ app.get('/',async(req,res)=>{
   const result = await collection.find().toArray();
   //res.json(result);
   console.log(result);
-  res.send("<h1>Hello</hq>");
+  res.send(result);
 });
 
 app.listen(port,()=>{
