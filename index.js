@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 
 const app = express();
 const port = process.env.PORT  || 3000;
-const url = "mongodb+srv://jaydeep:XZfXn69iCdYr8Tpj@cluster0.bk2ss.mongodb.net";
+const url = "https://mongodb+srv://jaydeep:XZfXn69iCdYr8Tpj@cluster0.bk2ss.mongodb.net";
 const client = new MongoClient(url);
 
 app.use(express.json());
