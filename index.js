@@ -58,7 +58,7 @@ app.get('/',async(req,res)=>{
    console.log(result);
     res.send(result);
 });
-console.log("hello");
+
 app.listen(port,()=>{
   console.log(`server is running on port ${port}`)
 });
