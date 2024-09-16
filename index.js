@@ -29,8 +29,16 @@ app.get('/',async(req,res)=>{
   const connection = await client.connect();
   const db = connection.db('test');
   const collection = db.collection('customers');
-  const result = await collection.find().toArray();
+  /*const result = await collection.find().toArray();
   //res.json(result);
+  console.log(result);
+  res.send(result);*/
+  const result = await db.insertOne({
+    name:"Joe",
+    age:47,
+    city:"London"
+  });
+
   console.log(result);
   res.send(result);
 });
