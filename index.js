@@ -43,12 +43,20 @@ app.get('/',async(req,res)=>{
   console.log(result);
   res.send(result);*/
 
-   const result = await collection.deleteOne({
+  /* const result = await collection.deleteOne({
       name:"Joe"
    });
 
    console.log(result);
-   res.send(result);
+   res.send(result);*/
+
+   const result = await collection.updateOne(
+       {name:"Jaydeep"},
+       {$set:{age:23}}
+   );
+
+   console.log(result);
+    res.send(result);
 });
 
 app.listen(port,()=>{
