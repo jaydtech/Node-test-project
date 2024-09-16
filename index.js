@@ -33,7 +33,7 @@ app.get('/',async(req,res)=>{
   //res.json(result);
   console.log(result);
   res.send(result);*/
-  const result = await db.insertOne({
+  const result = await collection.insertOne({
     name:"Joe",
     age:47,
     city:"London"
