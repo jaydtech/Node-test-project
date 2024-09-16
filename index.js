@@ -52,7 +52,7 @@ app.get('/',async(req,res)=>{
 
    const result = await collection.updateOne(
        {name:"Jaydeep"},
-       {$set:{age:23}}
+       {$set:{age:34}}
    );
 
    console.log(result);
