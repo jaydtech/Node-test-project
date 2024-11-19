@@ -29,10 +29,10 @@ app.get('/',async(req,res)=>{
   const connection = await client.connect();
   const db = connection.db('test');
   const collection = db.collection('customers');
-  /*const result = await collection.find().toArray();
+  const result = await collection.find().toArray();
   //res.json(result);
   console.log(result);
-  res.send(result);*/
+  res.send(result);
 
  /* const result = await collection.insertOne({
     name:"Joe",
@@ -50,13 +50,13 @@ app.get('/',async(req,res)=>{
    console.log(result);
    res.send(result);*/
 
-   const result = await collection.updateOne(
+  /* const result = await collection.updateOne(
        {name:"Jaydeep"},
        {$set:{age:34}}
    );
 
    console.log(result);
-    res.send(result);
+    res.send(result);*/
 });
 
 app.listen(port,()=>{
