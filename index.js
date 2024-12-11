@@ -1,9 +1,12 @@
 import express from "express";
+import cors from "cors";
 import { MongoClient , ServerApiVersion } from "mongodb";
 
 const app = express();
 const port = process.env.PORT  || 3000;
 const url = "mongodb+srv://jaydeep:XZfXn69iCdYr8Tpj@cluster0.bk2ss.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+app.use(cors);
 
             
 const client = new MongoClient(url, {
