@@ -62,6 +62,15 @@ app.get('/',async(req,res)=>{
     res.send(result);*/
 });
 
+app.get('/:name',async(req,res)=>{
+   const userName = req.params.name;
+   const connection = await client.connect();
+   const db = connection.db('test');
+   const collection = db.collection('customers');   
+   const result = await collection.find({name:userName}).toArray();
+   res.status(200).send(result);
+});
+
 app.listen(port,()=>{
   console.log(`server is running on port ${port}`)
 });
